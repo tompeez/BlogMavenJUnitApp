@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:outputText value="Maven JUnit Test Test App" id="ot1" inlineStyle="font-size:x-large;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.name.inputValue}" label="Name"
+                                          required="#{bindings.name.hints.mandatory}"
+                                          columns="#{bindings.name.hints.displayWidth}"
+                                          maximumLength="#{bindings.name.hints.precision}"
+                                          shortDesc="#{bindings.name.hints.tooltip}" id="it1">
+                                <f:validator binding="#{bindings.name.validator}"/>
+                            </af:inputText>
+                            <af:button actionListener="#{bindings.sayHello.execute}" text="sayHello"
+                                       disabled="#{!bindings.sayHello.enabled}" id="b1"/>
+                        </af:panelFormLayout>
+                        <af:outputText value="#{bindings.sayHello_return1.inputValue}" id="ot2" partialTriggers="b1"/>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

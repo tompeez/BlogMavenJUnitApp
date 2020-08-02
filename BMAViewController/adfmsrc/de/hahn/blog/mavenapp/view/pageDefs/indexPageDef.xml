@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="indexPageDef"
+                Package="de.hahn.blog.mavenapp.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="sayHello_return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.sayHello.result}"/>
+      <variable Type="java.lang.String" Name="sayHello_name" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="sayHello" RequiresUpdateModel="true" Action="invokeMethod" MethodName="sayHello"
+                  IsViewObjectMethod="false" DataControl="BMAAppModuleDataControl"
+                  InstanceName="bindings.sayHello.dataControl.dataProvider"
+                  ReturnName="data.BMAAppModuleDataControl.methodResults.sayHello_sayHello_dataControl_dataProvider_sayHello_result">
+      <NamedData NDName="name" NDType="java.lang.String" NDValue="${bindings.sayHello_name}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="name">
+      <AttrNames>
+        <Item Value="sayHello_name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="sayHello_return1">
+      <AttrNames>
+        <Item Value="sayHello_return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

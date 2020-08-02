@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BMAAppModule"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  ComponentClass="de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModuleImpl"
+  ComponentInterface="de.hahn.blog.mavenapp.model.adfbc.facade.common.BMAAppModule">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewUsage
+    Name="DepartmentsView1"
+    ViewObjectName="de.hahn.blog.mavenapp.model.adfbc.views.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="de.hahn.blog.mavenapp.model.adfbc.views.EmployeesView"/>
+  <ViewUsage
+    Name="DepartmentsView2"
+    ViewObjectName="de.hahn.blog.mavenapp.model.adfbc.views.DepartmentsView"/>
+  <ViewUsage
+    Name="EmployeesView2"
+    ViewObjectName="de.hahn.blog.mavenapp.model.adfbc.views.EmployeesView"/>
+  <ViewUsage
+    Name="EmployeesView3"
+    ViewObjectName="de.hahn.blog.mavenapp.model.adfbc.views.EmployeesView"/>
+  <ViewLinkUsage
+    Name="DeptMgrFkLink1"
+    ViewLinkObjectName="de.hahn.blog.mavenapp.model.adfbc.views.links.DeptMgrFkLink"
+    SrcViewUsageName="de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule.EmployeesView1"
+    DstViewUsageName="de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule.DepartmentsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="EmpManagerFkLink1"
+    ViewLinkObjectName="de.hahn.blog.mavenapp.model.adfbc.views.links.EmpManagerFkLink"
+    SrcViewUsageName="de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule.EmployeesView1"
+    DstViewUsageName="de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule.EmployeesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="EmpDeptFkLink1"
+    ViewLinkObjectName="de.hahn.blog.mavenapp.model.adfbc.views.links.EmpDeptFkLink"
+    SrcViewUsageName="de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule.DepartmentsView1"
+    DstViewUsageName="de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule.EmployeesView3"
+    Reversed="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="sayHello"
+      MethodName="sayHello">
+      <Return
+        Name="_return_type_"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="name"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+</AppModule>

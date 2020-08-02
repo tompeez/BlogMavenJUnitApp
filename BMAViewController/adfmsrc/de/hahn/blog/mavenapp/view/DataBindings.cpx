@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
+             SeparateXMLFiles="false" Package="de.hahn.blog.mavenapp.view" ClientType="Generic">
+  <pageMap>
+    <page path="/index.jsf" usageId="de_hahn_blog_mavenapp_view_indexPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="de_hahn_blog_mavenapp_view_indexPageDef" path="de.hahn.blog.mavenapp.view.pageDefs.indexPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="BMAAppModuleDataControl" Package="de.hahn.blog.mavenapp.model.adfbc.facade"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="BMAAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
