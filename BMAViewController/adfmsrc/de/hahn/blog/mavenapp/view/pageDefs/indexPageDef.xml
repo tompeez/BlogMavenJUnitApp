@@ -8,6 +8,9 @@
                 DefaultValue="${bindings.sayHello.result}"/>
       <variable Type="java.lang.String" Name="sayHello_name" IsQueriable="false"/>
     </variableIterator>
+    <iterator Binds="EmployeesView1" RangeSize="25" DataControl="BMAAppModuleDataControl" id="EmployeesView1Iterator"/>
+    <searchRegion Binds="EmployeesView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="EmployeesView1Query"/>
   </executables>
   <bindings>
     <methodAction id="sayHello" RequiresUpdateModel="true" Action="invokeMethod" MethodName="sayHello"
@@ -26,5 +29,18 @@
         <Item Value="sayHello_return"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView1">
+      <nodeDefinition DefName="de.hahn.blog.mavenapp.model.adfbc.views.EmployeesView" Name="EmployeesView10">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
