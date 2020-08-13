@@ -29,6 +29,7 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="BMAModel/BMAModel.jpr"/></hash>
+      <hash><url n="URL" path="BMAModelTest/BMAModelTest.jpr"/></hash>
       <hash><url n="URL" path="BMAViewController/BMAViewController.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
