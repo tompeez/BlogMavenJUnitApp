@@ -84,6 +84,7 @@
       <list n="technologyScope">
          <string v="ADFbc"/>
          <string v="Java"/>
+         <string v="Maven"/>
          <string v="XML"/>
       </list>
    </hash>
@@ -137,6 +138,9 @@
       <list n="profileList">
          <string v="BlogMavenApp_xxModel_adflib"/>
       </list>
+   </hash>
+   <hash n="oracle.jdeveloper.maven.compiler.MavenConfiguration">
+      <url n="pomfileURL" path="pom.xml"/>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
       <value n="j2eeWebAppName" v="BlogMavenApp-xxModel-webapp"/>
