@@ -147,7 +147,9 @@
                 <artifactId>ojmake</artifactId>
                 <version>12.2.1-4-0</version>
                 <configuration>
-                    <ojmake>${oracleHome}/jdeveloper/jdev/bin/ojmake</ojmake>
+                    <ojmake>
+                        ${oracleHome}/jdeveloper/jdev/bin/ojmake
+                    </ojmake>
                     <files>${basedir}/BMAModelTest.jpr</files>
                 </configuration>
                 <executions>
@@ -178,6 +180,19 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <argLine>
+                        -Dde.hahn.blog.maven.testrun=true -Dde.hahn.blog.maven.test.jdbcUser=hr
+                        -Dde.hahn.blog.maven.test.jdbcPwd=hr
+                        -Dde.hahn.blog.maven.test.jdbcUrl=jdbc:oracle:thin:@\/\/localhost:1521\/XEPDB1
+                        -Dde.hahn.blog.maven.debug=1
+                    </argLine>
+                </configuration>
             </plugin>
         </plugins>
         <testSourceDirectory>src/</testSourceDirectory>

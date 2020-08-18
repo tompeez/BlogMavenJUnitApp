@@ -156,6 +156,24 @@
          </list>
       </hash>
    </hash>
+   <hash n="oracle.jdeveloper.runner.RunConfigurations">
+      <hash n="runConfigurationDefinitions">
+         <hash n="Debug Tests">
+            <value n="custom" v="false"/>
+            <value n="name" v="Debug Tests"/>
+            <hash n="oracle.jdevimpl.runner.debug.DebugConfiguration">
+               <value n="remoteParameter:jpda:port" v="5005"/>
+            </hash>
+            <value n="remoteDebuggingProfiling" v="true"/>
+            <value n="runActiveFile" v="false"/>
+            <value n="targetURL"/>
+         </hash>
+      </hash>
+      <list n="runConfigurationList">
+         <string v="Debug Tests"/>
+         <string v="Default"/>
+      </list>
+   </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
       <list n="exportedReferences">
          <hash>
