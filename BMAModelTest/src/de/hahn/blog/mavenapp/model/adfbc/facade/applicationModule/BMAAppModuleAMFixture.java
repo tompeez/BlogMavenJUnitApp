@@ -1,7 +1,6 @@
 package de.hahn.blog.mavenapp.model.adfbc.facade.applicationModule;
 
 import oracle.jbo.ApplicationModule;
-import oracle.jbo.client.Configuration;
 
 public class BMAAppModuleAMFixture {
     private static BMAAppModuleAMFixture fixture1 = new BMAAppModuleAMFixture();
@@ -9,8 +8,8 @@ public class BMAAppModuleAMFixture {
 
     private BMAAppModuleAMFixture() {
         _am =
-            Configuration.createRootApplicationModule("de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule",
-                                                      "BMAAppModuleLocal");
+            BlogMavenConfiguration.createRootApplicationModule("de.hahn.blog.mavenapp.model.adfbc.facade.BMAAppModule",
+                                                               "BMAAppModuleLocal");
     }
 
     public void setUp() {
@@ -24,7 +23,7 @@ public class BMAAppModuleAMFixture {
     }
 
     public void release() throws Exception {
-        Configuration.releaseRootApplicationModule(_am, true);
+        BlogMavenConfiguration.releaseRootApplicationModule(_am, true);
     }
 
     public ApplicationModule getApplicationModule() {
